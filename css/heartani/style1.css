@@ -1,0 +1,63 @@
+:root{
+  --primary-color: #1D1D1D;
+}
+.heart-rate.container{
+  position: relative;
+  padding-right: 75px;
+  z-index: -1 !important;
+}
+.heart-rate {
+  width: 100%;
+  height: 73px;
+  z-index: -1 !important;
+}
+
+.fade-in {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  top: 0;
+  right: 0;
+  animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  animation: heartRateOut 2.5s linear infinite;
+  background: var(--primary-color);
+  background: -moz-linear-gradient(left, var(--primary-color) 0%, var(--primary-color) 50%, var(--primary-color) 100%);
+  background: -webkit-linear-gradient(left, var(--primary-color) 0%, var(--primary-color)) 50%, var(--primary-color) 100%;
+  background: -o-linear-gradient(left, var(--primary-color) 0%, var(--primary-color) 50%, var(--primary-color) 100%);
+  background: -ms-linear-gradient(left, var(--primary-color) 0%, var(--primary-color) 50%, var(--primary-color) 100%);
+  background: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 80%, var(--primary-color) 100%);
+  z-index: -1;
+}
+
+@keyframes heartRateIn {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes heartRateOut {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: -120%;
+  }
+  100% {
+    left: 0;
+  }
+}
